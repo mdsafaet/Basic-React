@@ -1,6 +1,7 @@
 
 import './App.css';
 
+
 function App() {
   const products = [
     {name: 'Phone', price: '$90.99'},
@@ -9,14 +10,14 @@ function App() {
     {name: ' Books', price: '$249.99'}
   ]
  
+ 
   return (
     <div className="App">
       <header className="App-header">
         <p>i am a react person</p>
-        <Product product={products[0]}></Product>
-        <Product product={products[1]}></Product>
-        <Product product={products[2]}></Product>
-        <Product product={products[3]}></Product>
+        {
+          products.map(pd => <Product product={pd}></Product>)
+        }    
         <Person name='Safaet' job='Student'></Person>
         <Person name='Md' job='Student'></Person>
         <Person name='Kashem' job='Student'></Person>
@@ -47,12 +48,6 @@ return(
   </div>
 )
 }
-
-
-
-
-
-
 function Person(props
 ) {
   const personStyle ={
